@@ -1,6 +1,6 @@
 media:
-  input: wedding-images
-  output: /wedding-images
+  input: assets
+  output: /assets
   categories: image
   extensions: [jpg, jpeg, png, webp, gif]
 
@@ -18,4 +18,4 @@ content:
   - name: images
     label: Wedding Images
     type: group
-    path: wedding-images
+    path: assets
