@@ -449,9 +449,9 @@
     <section id="welcome" class="section">
       <div class="section-inner fade-in">
         <h2>Welcome</h2>
-        <p id="welcome-intro"></p>
+        <div id="welcome-intro"></div>
         <img src="" alt="Gen and Lilith" class="welcome-photo" id="welcome-photo">
-        <p id="welcome-details"></p>
+        <div id="welcome-details"></div>
       </div>
     </section>
 
@@ -466,7 +466,7 @@
         </div>
         <div class="attire-box">
           <h3>Attire: Formal Garden Party</h3>
-          <p id="attire-desc"></p>
+          <div id="attire-desc"></div>
         </div>
         <div id="schedule-items"></div>
       </div>
@@ -484,7 +484,7 @@
         <h3>Before &amp; After the Wedding</h3>
         <div id="travel-before-after"></div>
         <h3>Share Your Info</h3>
-        <p id="share-info-text"></p>
+        <div id="share-info-text"></div>
         <p style="text-align: center; margin-top: 1.5rem;">
           <a id="address-btn" href="#" class="btn" target="_blank" rel="noopener">UPDATE ADDRESS</a>
         </p>
@@ -528,6 +528,16 @@
   </div><!-- /.floral-bg -->
 
   <script>
+    /* Minimal markdown: paragraphs, **bold**, *italic*, [links](url) */
+    function md(text) {
+      if (!text) return '';
+      var escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      var linked = escaped.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      var styled = linked.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+      var paragraphs = styled.split(/\n\n+/);
+      return paragraphs.map(function(p) { return '<p>' + p.replace(/\n/g, '<br>') + '</p>'; }).join('');
+    }
+
     fetch('content/site.json')
       .then(function(r) { return r.json(); })
       .then(function(d) {
@@ -539,8 +549,8 @@
         }
 
         /* Welcome */
-        document.getElementById('welcome-intro').textContent = d.welcome_intro;
-        document.getElementById('welcome-details').textContent = d.welcome_details;
+        document.getElementById('welcome-intro').innerHTML = md(d.welcome_intro);
+        document.getElementById('welcome-details').innerHTML = md(d.welcome_details);
         if (d.welcome_photo) {
           document.getElementById('welcome-photo').src = d.welcome_photo;
         }
@@ -549,13 +559,13 @@
         document.getElementById('wedding-date').textContent = d.wedding_date;
         document.getElementById('venue-name').textContent = d.venue_name;
         document.getElementById('venue-address').textContent = d.venue_address;
-        document.getElementById('attire-desc').textContent = d.attire_description;
+        document.getElementById('attire-desc').innerHTML = md(d.attire_description);
 
         var scheduleHTML = '';
         d.schedule.forEach(function(item) {
           scheduleHTML += '<div class="schedule-item">' +
             '<p class="time">' + item.time + '</p>' +
-            '<p>' + item.description + '</p></div>';
+            md(item.description) + '</div>';
         });
         document.getElementById('schedule-items').innerHTML = scheduleHTML;
 
@@ -564,21 +574,13 @@
         document.getElementById('lodging-address').textContent = d.lodging_address;
         document.getElementById('lodging-phone').textContent = d.lodging_phone;
 
-        var travelHTML = '';
-        d.travel_before_after.forEach(function(p) {
-          travelHTML += '<p>' + p + '</p>';
-        });
-        document.getElementById('travel-before-after').innerHTML = travelHTML;
+        document.getElementById('travel-before-after').innerHTML = md(d.travel_before_after);
 
-        document.getElementById('share-info-text').textContent = d.share_info_text;
+        document.getElementById('share-info-text').innerHTML = md(d.share_info_text);
         document.getElementById('address-btn').href = d.address_url;
 
         /* Story */
-        var storyHTML = '';
-        d.story.forEach(function(p) {
-          storyHTML += '<p>' + p + '</p>';
-        });
-        document.getElementById('story-content').innerHTML = storyHTML;
+        document.getElementById('story-content').innerHTML = md(d.story);
 
         /* Gallery */
         var galleryHTML = '';
@@ -594,7 +596,7 @@
         d.faqs.forEach(function(item) {
           faqHTML += '<div class="faq-item">' +
             '<div class="faq-question">' + item.question + '</div>' +
-            '<div class="faq-answer"><p>' + item.answer + '</p></div></div>';
+            '<div class="faq-answer">' + md(item.answer) + '</div></div>';
         });
         document.getElementById('faq-list').innerHTML = faqHTML;
 

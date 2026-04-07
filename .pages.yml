@@ -20,13 +20,13 @@ content:
         type: image
       - name: welcome_intro
         label: Welcome Intro
-        type: text
+        type: rich-text
       - name: welcome_photo
         label: Welcome Photo
         type: image
       - name: welcome_details
         label: Welcome Details
-        type: text
+        type: rich-text
       - name: wedding_date
         label: Wedding Date
         type: string
@@ -38,7 +38,7 @@ content:
         type: string
       - name: attire_description
         label: Attire Description
-        type: text
+        type: rich-text
       - name: schedule
         label: Schedule
         type: object
@@ -49,7 +49,7 @@ content:
             type: string
           - name: description
             label: Description
-            type: text
+            type: rich-text
       - name: lodging_name
         label: Lodging Name
         type: string
@@ -61,18 +61,16 @@ content:
         type: string
       - name: travel_before_after
         label: Before & After Wedding
-        type: string
-        list: true
+        type: rich-text
       - name: share_info_text
         label: Share Info Text
-        type: text
+        type: rich-text
       - name: address_url
         label: Address Collection URL
         type: string
       - name: story
-        label: Our Story Paragraphs
-        type: text
-        list: true
+        label: Our Story
+        type: rich-text
       - name: gallery
         label: Gallery
         type: object
@@ -94,7 +92,7 @@ content:
             type: string
           - name: answer
             label: Answer
-            type: text
+            type: rich-text
       - name: footer_text
         label: Footer Text
         type: string
