@@ -4,29 +4,44 @@ media:
   extensions: [jpg, jpeg, png, webp, gif]
 
 content:
-  - name: site
-    label: Wedding Site Content
+  - name: hero
+    label: Hero & Footer
     type: file
-    path: content/site.json
+    path: content/hero.json
     fields:
-      - name: hero_title
-        label: Hero Title
+      - name: title
+        label: Title
         type: string
-      - name: hero_subtitle
-        label: Hero Subtitle
+      - name: subtitle
+        label: Subtitle
         type: string
-      - name: hero_image
-        label: Hero Background Image
+      - name: image
+        label: Background Image
         type: image
-      - name: welcome_intro
-        label: Welcome Intro
+      - name: footer_text
+        label: Footer Text
+        type: string
+
+  - name: welcome
+    label: Welcome
+    type: file
+    path: content/welcome.json
+    fields:
+      - name: intro
+        label: Intro Text
         type: rich-text
-      - name: welcome_photo
-        label: Welcome Photo
+      - name: photo
+        label: Couple Photo
         type: image
-      - name: welcome_details
-        label: Welcome Details
+      - name: details
+        label: Details Text
         type: rich-text
+
+  - name: schedule
+    label: Schedule
+    type: file
+    path: content/schedule.json
+    fields:
       - name: wedding_date
         label: Wedding Date
         type: string
@@ -39,8 +54,8 @@ content:
       - name: attire_description
         label: Attire Description
         type: rich-text
-      - name: schedule
-        label: Schedule
+      - name: events
+        label: Events
         type: object
         list: true
         fields:
@@ -50,6 +65,12 @@ content:
           - name: description
             label: Description
             type: rich-text
+
+  - name: travel
+    label: Travel
+    type: file
+    path: content/travel.json
+    fields:
       - name: lodging_name
         label: Lodging Name
         type: string
@@ -59,7 +80,7 @@ content:
       - name: lodging_phone
         label: Lodging Phone
         type: string
-      - name: travel_before_after
+      - name: before_after
         label: Before & After Wedding
         type: rich-text
       - name: share_info_text
@@ -68,11 +89,23 @@ content:
       - name: address_url
         label: Address Collection URL
         type: string
-      - name: story
-        label: Our Story
+
+  - name: story
+    label: Our Story
+    type: file
+    path: content/story.json
+    fields:
+      - name: text
+        label: Story
         type: rich-text
-      - name: gallery
-        label: Gallery
+
+  - name: gallery
+    label: Gallery
+    type: file
+    path: content/gallery.json
+    fields:
+      - name: photos
+        label: Photos
         type: object
         list: true
         fields:
@@ -82,8 +115,14 @@ content:
           - name: caption
             label: Caption
             type: string
-      - name: faqs
-        label: FAQs
+
+  - name: faqs
+    label: FAQs
+    type: file
+    path: content/faqs.json
+    fields:
+      - name: items
+        label: Questions
         type: object
         list: true
         fields:
@@ -93,6 +132,3 @@ content:
           - name: answer
             label: Answer
             type: rich-text
-      - name: footer_text
-        label: Footer Text
-        type: string

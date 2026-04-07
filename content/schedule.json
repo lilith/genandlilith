@@ -1,0 +1,20 @@
+{
+  "wedding_date": "Thursday, July 9, 2026",
+  "venue_name": "Della Terra by Wedgewood Weddings",
+  "venue_address": "3501 Fall River Rd, Estes Park, CO 80517",
+  "attire_description": "Think garden party attire; dresses in fun colors, light suits or colors preferred. No tie required. Please note these are only our suggestions, dress however you feel best! We're happy to have you as you are, join in on the theme for extra fun and a bit of razzle dazzle.",
+  "events": [
+    {
+      "time": "5:00 PM — Ceremony",
+      "description": "Ceremony will be outdoors a short walk from the welcome table, outdoor cocktail hour to follow, reception will be indoors all at the same facility. Parking is available on site."
+    },
+    {
+      "time": "5:30 PM - 6:30 PM — Cocktail Hour",
+      "description": "Cocktail hour will be a short walk from the ceremony space. There will be drinks, appetizers, and lawn games. We will also have a photo booth set up."
+    },
+    {
+      "time": "6:30 PM - 10:00 PM — Reception & Dinner",
+      "description": "Reception and dinner are indoors and buffet style. Eat whatever sounds good to you."
+    }
+  ]
+}

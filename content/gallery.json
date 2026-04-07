@@ -1,0 +1,20 @@
+{
+  "photos": [
+    {
+      "image": "/assets/zola-gallery-paris-engaged.jpg",
+      "caption": "Paris, after getting engaged — April 2024"
+    },
+    {
+      "image": "/assets/zola-gallery-barcelona.jpg",
+      "caption": "Barcelona — 2026"
+    },
+    {
+      "image": "/assets/zola-gallery-estes-park.jpg",
+      "caption": "Estes Park — 2026"
+    },
+    {
+      "image": "/assets/zola-gallery-la-pedrera.jpg",
+      "caption": "La Pedrera, Barcelona — 2026"
+    }
+  ]
+}
