@@ -92,6 +92,10 @@
     #hero .hero-gradient {
       position: absolute;
       inset: 0;
+      background: none;
+    }
+
+    #hero.has-image .hero-gradient {
       background: linear-gradient(to bottom, rgba(51,49,50,0.3) 0%, rgba(51,49,50,0.6) 100%);
     }
 
@@ -558,7 +562,12 @@
       document.getElementById('hero-title').textContent = hero.title;
       document.getElementById('hero-subtitle').textContent = hero.subtitle;
       if (hero.image) {
-        document.getElementById('hero-bg').style.backgroundImage = "url('" + hero.image + "')";
+        var testImg = new Image();
+        testImg.onload = function() {
+          document.getElementById('hero-bg').style.backgroundImage = "url('" + hero.image + "')";
+          document.getElementById('hero').classList.add('has-image');
+        };
+        testImg.src = hero.image;
       }
       document.getElementById('footer-text').textContent = hero.footer_text;
 
