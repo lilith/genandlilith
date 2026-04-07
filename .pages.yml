@@ -1,7 +1,6 @@
 media:
   input: assets
   output: /assets
-  categories: image
   extensions: [jpg, jpeg, png, webp, gif]
 
 content:
@@ -14,8 +13,3 @@ content:
       - name: body
         label: Site HTML
         type: code
-
-  - name: images
-    label: Wedding Images
-    type: group
-    path: assets
