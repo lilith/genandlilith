@@ -8,8 +8,7 @@ content:
     label: Wedding Site
     type: file
     path: index.html
-    format: raw
     fields:
       - name: body
         label: Site HTML
-        type: code
+        type: rich-text
