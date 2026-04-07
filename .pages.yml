@@ -5,10 +5,96 @@ media:
 
 content:
   - name: site
-    label: Wedding Site
+    label: Wedding Site Content
     type: file
-    path: index.html
+    path: content/site.json
     fields:
-      - name: body
-        label: Site HTML
-        type: rich-text
+      - name: hero_title
+        label: Hero Title
+        type: string
+      - name: hero_subtitle
+        label: Hero Subtitle
+        type: string
+      - name: hero_image
+        label: Hero Background Image
+        type: image
+      - name: welcome_intro
+        label: Welcome Intro
+        type: text
+      - name: welcome_photo
+        label: Welcome Photo
+        type: image
+      - name: welcome_details
+        label: Welcome Details
+        type: text
+      - name: wedding_date
+        label: Wedding Date
+        type: string
+      - name: venue_name
+        label: Venue Name
+        type: string
+      - name: venue_address
+        label: Venue Address
+        type: string
+      - name: attire_description
+        label: Attire Description
+        type: text
+      - name: schedule
+        label: Schedule
+        type: object
+        list: true
+        fields:
+          - name: time
+            label: Time
+            type: string
+          - name: description
+            label: Description
+            type: text
+      - name: lodging_name
+        label: Lodging Name
+        type: string
+      - name: lodging_address
+        label: Lodging Address
+        type: string
+      - name: lodging_phone
+        label: Lodging Phone
+        type: string
+      - name: travel_before_after
+        label: Before & After Wedding
+        type: string
+        list: true
+      - name: share_info_text
+        label: Share Info Text
+        type: text
+      - name: address_url
+        label: Address Collection URL
+        type: string
+      - name: story
+        label: Our Story Paragraphs
+        type: text
+        list: true
+      - name: gallery
+        label: Gallery
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Photo
+            type: image
+          - name: caption
+            label: Caption
+            type: string
+      - name: faqs
+        label: FAQs
+        type: object
+        list: true
+        fields:
+          - name: question
+            label: Question
+            type: string
+          - name: answer
+            label: Answer
+            type: text
+      - name: footer_text
+        label: Footer Text
+        type: string
