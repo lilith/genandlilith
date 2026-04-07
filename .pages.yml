@@ -1,0 +1,21 @@
+media:
+  input: wedding-images
+  output: /wedding-images
+  categories: image
+  extensions: [jpg, jpeg, png, webp, gif]
+
+content:
+  - name: site
+    label: Wedding Site
+    type: file
+    path: index.html
+    format: raw
+    fields:
+      - name: body
+        label: Site HTML
+        type: code
+
+  - name: images
+    label: Wedding Images
+    type: group
+    path: wedding-images

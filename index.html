@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genevieve & Lilith - July 9, 2026</title>
+  <meta name="description" content="Wedding celebration of Genevieve and Lilith - July 9, 2026 in Estes Park, Colorado">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #333132;
+      --cream: #f5f0eb;
+      --gold: #d4af8e;
+      --gold-5: rgba(212,175,142,0.05);
+      --gold-8: rgba(212,175,142,0.08);
+      --gold-50: rgba(212,175,142,0.5);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(51,49,50,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gold);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    #hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('wedding-images/theknot-couple-mountain-banner.webp') center/cover no-repeat;
+      opacity: 0.35;
+    }
+
+    #hero .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(51,49,50,0.3) 0%, rgba(51,49,50,0.6) 100%);
+    }
+
+    #hero .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    #hero h1 {
+      font-family: 'Bellefair', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    #hero .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    /* ── Floral Background Wrapper ── */
+    .floral-bg {
+      background: url('wedding-images/theknot-watercolor-floral-highres.png') top center / cover no-repeat fixed;
+    }
+
+    @media (max-width: 768px) {
+      .floral-bg {
+        background-attachment: scroll;
+      }
+    }
+
+    /* ── Content Sections ── */
+    .section {
+      background: rgba(51,49,50,0.88);
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .section-inner.fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .section-inner.fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section + .section {
+      border-top: 1px solid rgba(212,175,142,0.25);
+    }
+
+    h2 {
+      font-family: 'Bellefair', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-align: center;
+      color: var(--cream);
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-family: 'Bellefair', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    a {
+      color: var(--gold);
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 0.75rem 2rem;
+      border-radius: 2px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: 'Cormorant Garamond', serif;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--cream);
+    }
+
+    /* ── Welcome ── */
+    .welcome-photo {
+      display: block;
+      max-width: 100%;
+      border-radius: 4px;
+      margin: 2rem auto;
+    }
+
+    /* ── Schedule ── */
+    .schedule-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .schedule-header .date {
+      font-size: 1.3rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .schedule-header .venue {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .attire-box {
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .attire-box h3 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-item {
+      background: var(--gold-5);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .schedule-item .time {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── Travel ── */
+    .venue-card {
+      background: var(--gold-8);
+      padding: 1.5rem 2rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .venue-card h3 {
+      font-size: 1.5rem;
+    }
+
+    .venue-card .address {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .decorative-banner {
+      display: block;
+      max-width: 100%;
+      margin: 2rem auto;
+      border-radius: 4px;
+    }
+
+    /* ── Story ── */
+    #story p {
+      text-align: left;
+    }
+
+    /* ── Gallery ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(51,49,50,0.85));
+      padding: 2rem 1rem 1rem;
+      font-size: 0.95rem;
+      color: var(--cream);
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    /* ── FAQs ── */
+    .faq-item {
+      border-bottom: 1px solid var(--gold-50);
+      padding: 1.2rem 0;
+    }
+
+    .faq-question {
+      font-family: 'Bellefair', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--cream);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question::after {
+      content: '\2212';
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      padding-top: 0;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      opacity: 1;
+      padding-top: 1rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: rgba(51,49,50,0.88);
+      border-top: 1px solid rgba(212,175,142,0.25);
+      text-align: center;
+      padding: 3rem 2rem;
+      font-family: 'Bellefair', serif;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      color: var(--gold);
+    }
+
+    /* ── Floral overlay decoration ── */
+    .floral-overlay {
+      display: block;
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      nav {
+        gap: 1rem;
+        padding: 0.8rem 1rem;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+      }
+
+      .section {
+        padding: 3rem 1.2rem;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      .gallery-grid {
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#travel">Travel</a>
+    <a href="#story">Our Story</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#faqs">FAQs</a>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <h1>GENEVIEVE &amp; LILITH</h1>
+      <p class="subtitle">July 9, 2026 &middot; Estes Park, Colorado</p>
+    </div>
+  </section>
+
+  <!-- Floral Background Wrapper -->
+  <div class="floral-bg">
+
+    <!-- Welcome -->
+    <section id="welcome" class="section">
+      <div class="section-inner fade-in">
+        <h2>Welcome</h2>
+        <p>Welcome! If you're invited you are certainly special to us, and we would be honored to share this special day with you! Please join us for fun, festivities, and good food in beautiful Estes Park, Colorado. We look forward to celebrating together!</p>
+        <img src="wedding-images/zola-couple-photo-main.jpg" alt="Gen and Lilith" class="welcome-photo">
+        <p>We're still setting up the RSVPs, but for now you can find some general information on this website including time, date, location, and general timeline for those of you who want to join us for other fun activities before and after the wedding! Check out the sections below for Schedule, Travel, and FAQs for additional info. Feel free to contact Gen or Lilith with any questions, alternatively you may also contact Deb or George should be able to help answer most as well.</p>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="section">
+      <div class="section-inner fade-in">
+        <h2>Schedule</h2>
+
+        <div class="schedule-header">
+          <h3>Wedding Day</h3>
+          <p class="date">Thursday, July 9, 2026</p>
+          <p class="venue">Della Terra by Wedgewood Weddings<br>3501 Fall River Rd, Estes Park, CO 80517</p>
+        </div>
+
+        <div class="attire-box">
+          <h3>Attire: Formal Garden Party</h3>
+          <p>Think garden party attire; dresses in fun colors, light suits or colors preferred. No tie required. Please note these are only our suggestions, dress however you feel best! We're happy to have you as you are, join in on the theme for extra fun and a bit of razzle dazzle.</p>
+        </div>
+
+        <div class="schedule-item">
+          <p class="time">5:00 PM &mdash; Ceremony</p>
+          <p>Ceremony will be outdoors a short walk from the welcome table, outdoor cocktail hour to follow, reception will be indoors all at the same facility. Parking is available on site.</p>
+        </div>
+
+        <div class="schedule-item">
+          <p class="time">5:30 PM - 6:30 PM &mdash; Cocktail Hour</p>
+          <p>Cocktail hour will be a short walk from the ceremony space. There will be drinks, appetizers, and lawn games. We will also have a photo booth set up.</p>
+        </div>
+
+        <div class="schedule-item">
+          <p class="time">6:30 PM - 10:00 PM &mdash; Reception &amp; Dinner</p>
+          <p>Reception and dinner are indoors and buffet style. Eat whatever sounds good to you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel -->
+    <section id="travel" class="section">
+      <div class="section-inner fade-in">
+        <h2>Travel &amp; Accommodations</h2>
+
+        <div class="venue-card">
+          <h3>Lodging</h3>
+          <p>YMCA of the Rockies &mdash; Estes Park Family Resort and Cabins</p>
+          <p class="address">2515 Tunnel Road, Estes Park, CO 80511<br>Phone: (970) 586-3341</p>
+        </div>
+
+        <img src="wedding-images/zola-decorative-banner.png" alt="Decorative banner" class="decorative-banner">
+
+        <h3>Before &amp; After the Wedding</h3>
+        <p>More details to come, but currently the plan is that many people will be in town starting Tuesday July 7th, so we will likely plan a meet and greet dinner for any family and friends that would like to attend either the night of the 7th or 8th prior to the wedding which will be on Thursday July 9th.</p>
+        <p>For the days following the wedding we are planning to stay at YMCA of the Rockies at Estes Park through Tuesday July 14th. There are many lodging options there, including cabins and rooms at a lodge, but the idea is we can all stay after the wedding if desired and do some fun stuff around Estes and RMNP.</p>
+        <p>Feel free to reach out if you'd like to try coordinating for AirBnb or YMCA cabins close together as that's where Lilith, the kids, Gen and much of her family will be staying.</p>
+
+        <img src="wedding-images/zola-gallery-flowers.png" alt="Flower arrangement" class="decorative-banner">
+
+        <h3>Share Your Info</h3>
+        <p>Send us your updated contact info &mdash; share your current mailing address, email, and phone # so we can keep you in the loop!</p>
+        <p style="text-align: center; margin-top: 1.5rem;">
+          <a href="https://www.zola.com/addr/9YyZZ8V6Y" class="btn" target="_blank" rel="noopener">UPDATE ADDRESS</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="story" class="section">
+      <div class="section-inner fade-in">
+        <h2>Our Story</h2>
+        <p>Gen and Lilith met online, and went on their first date on August 15th, 2023. They went to brunch at a cute restaurant and then had a spa day; they had so much fun they ended up getting dinner together, and then they went to Lilith's house so Gen could see her 3D printed spice racks and giant playset for her kids.</p>
+        <p>They hit it off so well that for their second date Gen met Lilith's kids, Jason and Ian, and for their third date Lilith met Gen's family over Mexican food.</p>
+        <p>Gen and Lilith both have a passion for engineering, travel, family, food, and adventure so they hit it off right away. They so enjoyed each others company that their 4th date was a trip to Mexico together where Gen asked Lilith to officially be her girlfriend. Things took off from there and they started sharing life together, family events, trips to Japan, Europe, and beyond, Lilith's first camping trip, and so much more!</p>
+        <p>The following year they finally took a trip to Paris together that they had talked about on their very first date. On that trip during a visit to Versailles in the gardens near the temple of love, Lilith proposed to Genevieve, to which she received a very enthusiastic yes.</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="section-inner fade-in">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-full="wedding-images/zola-gallery-paris-engaged.jpg">
+            <img src="wedding-images/zola-gallery-paris-engaged.jpg" alt="Paris, after getting engaged - April 2024" loading="lazy">
+            <div class="caption">Paris, after getting engaged &mdash; April 2024</div>
+          </div>
+          <div class="gallery-item" data-full="wedding-images/zola-gallery-barcelona.jpg">
+            <img src="wedding-images/zola-gallery-barcelona.jpg" alt="Barcelona - 2026" loading="lazy">
+            <div class="caption">Barcelona &mdash; 2026</div>
+          </div>
+          <div class="gallery-item" data-full="wedding-images/zola-gallery-estes-park.jpg">
+            <img src="wedding-images/zola-gallery-estes-park.jpg" alt="Estes Park - 2026" loading="lazy">
+            <div class="caption">Estes Park &mdash; 2026</div>
+          </div>
+          <div class="gallery-item" data-full="wedding-images/zola-gallery-la-pedrera.jpg">
+            <img src="wedding-images/zola-gallery-la-pedrera.jpg" alt="La Pedrera, Barcelona - 2026" loading="lazy">
+            <div class="caption">La Pedrera, Barcelona &mdash; 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <img src="" alt="Gallery photo enlarged">
+    </div>
+
+    <!-- FAQs -->
+    <section id="faqs" class="section">
+      <div class="section-inner fade-in">
+        <h2>FAQs</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Will there be parking available?</div>
+          <div class="faq-answer">
+            <p>Yes! Parking is available on site at the venue. There is handicap parking, much of the normal parking will be a bit of a walk, however there will be a golf cart picking people up to take them from their cars to the venue so please know that's an option!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can I bring my kids?</div>
+          <div class="faq-answer">
+            <p>Yes, we ourselves have kids that will be attending, so we do plan to welcome any kids of family and friends that they would like to bring along. Don't want to bring them or prefer to get a sitter? No worries! If you do wish to bring them along just make sure to include them in your RSVP along with ages for our final guest count please.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Will there be vegetarian food options?</div>
+          <div class="faq-answer">
+            <p>Yes! Dinner will be buffet style with several options for main courses and many different options for various sides and salads as well. Eat whatever sounds good to you or meets any dietary restrictions you may have. If there's something particular you think we should be aware of or that requires special prep you can mention it in the RSVP or reach out to one of us directly and we'll do our best to accommodate.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can I RSVP before receiving my invitation?</div>
+          <div class="faq-answer">
+            <p>Yes, absolutely! We still are planning to send out invites, but if you know you'll be coming please RSVP. We would also love for you to share your current address, email, and phone with us at <a href="https://www.zola.com/addr/9YyZZ8V6Y" target="_blank" rel="noopener">zola.com/addr/9YyZZ8V6Y</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      G &amp; L &mdash; 7.9.2026
+    </footer>
+
+  </div><!-- /.floral-bg -->
+
+  <!-- Floral overlay at bottom -->
+  <img src="wedding-images/theknot-floral-overlay-large.png" alt="" class="floral-overlay" aria-hidden="true">
+
+  <script>
+    /* ── FAQ Accordion ── */
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+      q.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+
+    /* ── Photo Lightbox ── */
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.gallery-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        lightboxImg.src = this.getAttribute('data-full');
+        lightboxImg.alt = this.querySelector('img').alt;
+        lightbox.classList.add('open');
+      });
+    });
+
+    lightbox.addEventListener('click', function() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+      }
+    });
+
+    /* ── Scroll Effects ── */
+    var sections = document.querySelectorAll('.section');
+    var navLinks = document.querySelectorAll('nav a');
+
+    // Active nav highlighting
+    var navObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+
+    sections.forEach(function(section) {
+      navObserver.observe(section);
+    });
+
+    // Also observe hero
+    var hero = document.getElementById('hero');
+    if (hero) navObserver.observe(hero);
+
+    // Fade-in animations
+    var fadeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      fadeObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
